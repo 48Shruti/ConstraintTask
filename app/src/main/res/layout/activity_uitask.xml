@@ -254,20 +254,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:gravity="center"
             android:background="#FBE0E0">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gallery"
                 android:textSize="25dp"
-                android:textColor="#E91E63"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:textColor="#E91E63"/>
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="8dp"
+                android:layout_margin="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/img_3" />
         </LinearLayout>
@@ -284,20 +283,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:gravity="center"
             android:background="#D1F6A5">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Notice"
                 android:textSize="25dp"
+                android:paddingHorizontal="10dp"
                 android:textColor="#26B62C"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"/>
+                />
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="8dp"
+                android:layout_margin="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/img_4" />
         </LinearLayout>
@@ -313,21 +312,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal"
             android:background="#C3E3FB">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pay Fee"
                 android:textSize="25dp"
                 android:textColor="#0F71BF"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center"/>
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="8dp"
+                android:layout_margin="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/img_5" />
         </LinearLayout>
@@ -345,22 +343,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:gravity="center"
             android:background="#F1FAA0">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="About"
                 android:textSize="25dp"
                 android:textColor="#FF9800"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
+                android:layout_gravity="center" />
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerInside"
-                android:layout_margin="8dp"
+                android:layout_margin="10dp"
                 android:src="@drawable/img_6" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
