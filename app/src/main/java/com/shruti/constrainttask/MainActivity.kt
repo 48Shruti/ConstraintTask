@@ -19,5 +19,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,SpinnerActivity::class.java)
             startActivity(intent)
         }
+        binding.btnList.setOnClickListener {
+            val intent = Intent(this,ListViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

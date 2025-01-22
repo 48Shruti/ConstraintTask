@@ -3,6 +3,7 @@ package com.shruti.constrainttask
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
@@ -15,8 +16,6 @@ import com.shruti.constrainttask.databinding.CustomDialogBinding
 
 class SpinnerActivity : AppCompatActivity() {
     lateinit var binding: ActivitySpinnerBinding
-    val position = 0
-    private var isSpinnerInitialized = false
     val list = mutableListOf<String>()
     lateinit var adapter : ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,18 +27,17 @@ class SpinnerActivity : AppCompatActivity() {
         binding.spinner.adapter = adapter
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                if(isSpinnerInitialized){
-                    Toast.makeText(this@SpinnerActivity,"${list[p2]} is updated",Toast.LENGTH_SHORT).show()
-                    customDialog(true,p2)
-                }else{
-                    isSpinnerInitialized = true
-                }
+              //  System.out.println("spinner is initilizes $isSpinnerInitialized")
+                    Toast.makeText(
+                        this@SpinnerActivity,
+                        "${list[p2]} is updated",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    customDialog(true, p2)
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-
             }
-
         }
         binding.fab.setOnClickListener {
             customDialog(false,-1)
@@ -52,6 +50,7 @@ class SpinnerActivity : AppCompatActivity() {
         dialog.setContentView(dialogBinding.root)
         dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         if (position >= 0 && isUpdated){
+            System.out.println("is updated $isUpdated")
             dialogBinding.etname.setText(list[position])
         }
         dialogBinding.btnadd.setOnClickListener {
@@ -62,8 +61,10 @@ class SpinnerActivity : AppCompatActivity() {
                 val inputData = dialogBinding.etname.text.toString()
                 if(position >= 0 && isUpdated){
                     list[position] = inputData
+                    System.out.println("is updated $isUpdated")
                 }else{
                     list.add(inputData)
+                    System.out.println("is updated $isUpdated")
                     Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show()
                 }
                 adapter.notifyDataSetChanged()
