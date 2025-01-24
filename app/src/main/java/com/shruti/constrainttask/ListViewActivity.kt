@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.shruti.constrainttask.databinding.ActivityListViewBinding
 import com.shruti.constrainttask.databinding.CustomDialogBinding
+import com.shruti.constrainttask.databinding.CustomDialogNumBinding
+import com.shruti.constrainttask.databinding.CustomLayoutListBinding
 
 class ListViewActivity : AppCompatActivity() {
     lateinit var binding: ActivityListViewBinding
@@ -42,7 +44,7 @@ class ListViewActivity : AppCompatActivity() {
             val selectedItem  = parent.getItemAtPosition(position) as String
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.custom_dialog)
-            val dialogBinding = CustomDialogBinding.inflate(layoutInflater)
+            val dialogBinding = CustomLayoutListBinding.inflate(layoutInflater)
             dialog.setContentView(dialogBinding.root)
             dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
             dialogBinding.etname.setText(selectedItem)
